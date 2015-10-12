@@ -75,7 +75,7 @@ body { font-family: Arial, sans-serif; font-size: 12px; line-height: 1.4; }
 
 a { text-decoration: none; }
 
-.out { position: relative; overflow: hidden; }
+.out { position: relative; }
 
 .btn-play { position: absolute; top: 55px; right: 65px; display: block; width: 220px; height: 40px; border-radius: 5px; background-image: linear-gradient(to top, #e78500 0%, #e78500 1%, #f6ae00 50%, #ffeb60 91%, #fffce5 100%); box-shadow: 0 3px 5px #994905, inset 0 1px 0 2px rgba(255, 255, 255, 0.21); color: #303030; font-size: 20px; font-weight: bold; line-height: 2; font-family: "PT Sans", sans-serif; transition: -webkit-transform 300ms; transition: transform 300ms; }
 .btn-play:hover { -webkit-transform: translateY(2px); -ms-transform: translateY(2px); transform: translateY(2px); }
@@ -92,17 +92,17 @@ a { text-decoration: none; }
 
 .right { float: right; }
 
-.section { position: relative; max-width: 1200px; min-width: 960px; width: 100%; height: 714px; margin: 0 auto; text-align: center; font-size: 0; }
+.section { position: relative; max-width: 1200px; min-width: 960px; width: 100%; height: 714px; margin: 0 auto; transition: opacity 700ms, visibility 700ms; text-align: center; font-size: 0; }
 .section:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 .section.section_main { background: url("../img/bg-main.jpg") top center no-repeat; }
-.section.section_more { position: absolute; top: 0; left: 0; right: 0; opacity: 0; transition: opacity 700ms; visibility: hidden; background: url("../img/bg-loc.jpg") top center no-repeat; }
+.section.section_more { position: absolute; top: 0; left: 0; right: 0; opacity: 0; visibility: hidden; background: url("../img/bg-loc.jpg") top center no-repeat; }
 .section.section_more.is-active { visibility: visible; opacity: 1; }
 .section.section_more.is-index { z-index: 100; }
 .section .section__top { position: absolute; top: 0; left: 0; right: 0; padding-top: 55px; text-align: center; }
 
 .main { max-width: 710px; padding: 80px 0; margin: 0 auto; text-align: center; }
 .main .h1 { color: #073B71; line-height: 1; }
-.main .main__text p { display: block; margin: 25px; color: #0C2035; font-size: 14px; line-height: 1.4; }
+.main .main__text p { display: block; margin: 25px; color: rgba(12, 32, 53, 0.9); font-size: 14px; line-height: 1.4; }
 
 .button { display: inline-block; vertical-align: middle; margin: 0 15px; cursor: pointer; text-align: center; }
 .button .button__inn { margin: 4px; }
@@ -117,12 +117,12 @@ a { text-decoration: none; }
 .button.button_weapon .button__inn span { background-image: url("../img/icons.png"); width: 44px; height: 44px; background-position: 0px -296px; }
 .button.button_weapon:hover .button__inn { background-image: url("../img/icons.png"); width: 120px; height: 140px; background-position: -132px 0px; }
 
-.inner { position: relative; width: 100%; height: 500px; margin-top: 30px; padding: 0 70px; }
+.inner { position: relative; width: 100%; height: 500px; margin-top: 30px; }
 .inner .h1 { line-height: 1.2; }
 .inner .inner__btns { position: absolute; bottom: -16px; left: 0; right: 0; }
 
 .locations { background: url("../img/loc-border.png") center center no-repeat; }
-.locations .locations__inn { margin: 50px 0 0 30px; text-align: justify; line-height: 0; font-size: 0; text-justify: newspaper; zoom: 1; -moz-text-align-last: justify; text-align-last: justify; text-align: left; }
+.locations .locations__inn { margin: 50px 5% 0 6%; text-align: justify; line-height: 0; font-size: 0; text-justify: newspaper; zoom: 1; -moz-text-align-last: justify; text-align-last: justify; text-align: left; }
 .locations .locations__inn:after { content: ""; display: inline-block; width: 100%; height: 0px; visibility: hidden; overflow: hidden; }
 .locations .locations__item { display: inline-block; vertical-align: top; width: 25%; padding-right: 1%; }
 .locations .locations__item:nth-child(2n) { padding: 0 2% 0 2%; }
@@ -130,6 +130,7 @@ a { text-decoration: none; }
 .locations .locations__item .p { overflow: hidden; }
 .locations .locations__item .p a { color: #FDD92B; font-size: 14px; }
 .locations .locations__item .p a:hover { color: #3EB2C7; }
+@media only screen and (max-width: 1060px) { .locations .h1 { line-height: 1; } }
 
 .btn { display: inline-block; vertical-align: middle; margin: 0 15px; cursor: pointer; text-align: center; }
 .btn .btn__inn { margin: 5px 4px; }
@@ -137,19 +138,22 @@ a { text-decoration: none; }
 .btn .btn__inn p { color: #FFF; font-size: 12px; }
 .btn.is-active { background-image: url("../img/icons.png"); width: 90px; height: 104px; background-position: -248px -152px; }
 .btn.btn_locations .btn__inn { background-image: url("../img/icons.png"); width: 82px; height: 94px; background-position: -380px 0px; }
-.btn.btn_locations .btn__inn span { background-image: url("../img/icons.png"); width: 51px; height: 44px; background-position: -380px -244px; }
+.btn.btn_locations .btn__inn span { margin: 23px 1px 0 0; }
 .btn.btn_locations:hover span { opacity: 0.5; background-image: url("../img/icons.png"); width: 51px; height: 44px; background-position: -380px -196px; }
 .btn.btn_locations.is-active span { opacity: 1; background-image: url("../img/icons.png"); width: 51px; height: 44px; background-position: -380px -196px; }
 .btn.btn_weapon .btn__inn { background-image: url("../img/icons.png"); width: 82px; height: 94px; background-position: -380px -98px; }
-.btn.btn_weapon .btn__inn span { background-image: url("../img/icons.png"); width: 44px; height: 44px; background-position: -48px -296px; }
 .btn.btn_weapon:hover span { opacity: 0.5; background-image: url("../img/icons.png"); width: 44px; height: 44px; background-position: 0px -296px; }
 .btn.btn_weapon.is-active span { opacity: 1; background-image: url("../img/icons.png"); width: 44px; height: 44px; background-position: 0px -296px; }
 
 .weapon { background: url("../img/weapon-border.png") center center no-repeat; }
-.weapon .weapon__inn { margin: 0 75px 0 100px; *zoom: 1; }
+.weapon .weapon__inn { margin: 0 9% 0 11%; *zoom: 1; }
 .weapon .weapon__inn:after { content: " "; display: table; clear: both; }
 .weapon .weapon__inn .h3 { width: 90%; margin: 20px auto 70px; }
 .weapon .weapon__text { width: 210px; text-align: left; }
+@media only screen and (max-width: 1160px) { .weapon .weapon__inn { margin: 0 7% 0 9%; } }
+@media only screen and (max-width: 1100px) { .weapon .weapon__inn { margin: 0 5% 0 7%; } }
+@media only screen and (max-width: 1050px) { .weapon .weapon__inn { margin: 0 3% 0 5%; } }
+@media only screen and (max-width: 1000px) { .weapon .weapon__inn { margin: 0 2% 0 3%; } }
 
 .characters { position: absolute; bottom: -120px; left: 0; right: 0; }
 .characters .characters__inn { display: inline-block; vertical-align: top; }
@@ -166,7 +170,7 @@ a { text-decoration: none; }
 .characters .characters__item.light p { top: -45px; left: 80px; }
 .characters .characters__item.light p:before { bottom: -5px; right: -17px; background-image: url("../img/icons.png"); width: 29px; height: 14px; background-position: -342px -174px; }
 .characters .characters__item.light:hover { opacity: 1; }
-.characters .characters__item.pirat p { top: 15px; left: -30px; }
+.characters .characters__item.pirat p { top: 25px; left: -30px; }
 .characters .characters__item.pirat p:before { bottom: -20px; right: 10px; background-image: url("../img/icons.png"); width: 32px; height: 18px; background-position: -342px -152px; }
 .characters .characters__item.pirat:hover { opacity: 1; }
 .characters .characters__item.pirat:hover img.big { margin: -20px -13px 0; }
