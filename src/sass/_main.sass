@@ -10,8 +10,16 @@
 	&.section_main
 		background: url("../img/bg-main.jpg") top center no-repeat
 	&.section_more
-		// display: none
+		position: absolute
+		top: 100%
+		left: 0
+		right: 0
+		transition: top 700ms
 		background: url("../img/bg-loc.jpg") top center no-repeat
+		&.is-active
+			top: 0
+		&.is-index
+			z-index: 100
 	.section__top
 		position: absolute
 		top: 0
@@ -59,7 +67,7 @@
 		&:hover
 			.button__inn
 				+s(bg-loc-h)
-	&.button_equipment
+	&.button_weapon
 		+s(btn-border)
 		.button__inn
 			+s(bg-eq)
@@ -137,7 +145,7 @@
 			span
 				opacity: 1
 				+s(loc)
-	&.btn_equipment
+	&.btn_weapon
 		.btn__inn
 			+s(bg-eq1)
 			span
@@ -171,11 +179,26 @@
 	.characters__inn
 		display: inline-block
 		vertical-align: top
+		&.is-active
+			.characters__item
+				opacity: 0.5
+				+scale(0.9)
+				&.is-active
+					opacity: 1
+					+scale(1)
+					img
+						&.small
+							display: none
+						&.big
+							display: block
+					p
+						display: block
 	.characters__item
 		position: relative
 		display: inline-block
 		vertical-align: top
 		cursor: pointer
+		transition: opacity 300ms, transform 300ms
 		img
 			&.big
 				display: none
@@ -224,15 +247,7 @@
 					+s(arr-dark)
 			&:hover
 				opacity: 1
-		&:hover
-			opacity: 0.5
-			img
-				&.small
-					display: none
-				&.big
-					display: block
-			p
-				display: block
+		
 
 
 
