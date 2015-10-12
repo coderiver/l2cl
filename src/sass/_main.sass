@@ -11,13 +11,16 @@
 		background: url("../img/bg-main.jpg") top center no-repeat
 	&.section_more
 		position: absolute
-		top: 100%
+		top: 0
 		left: 0
 		right: 0
-		transition: top 700ms
+		opacity: 0
+		transition: opacity 700ms
+		visibility: hidden
 		background: url("../img/bg-loc.jpg") top center no-repeat
 		&.is-active
-			top: 0
+			visibility: visible
+			opacity: 1
 		&.is-index
 			z-index: 100
 	.section__top
@@ -34,13 +37,15 @@
 	margin: 0 auto
 	text-align: center
 	.h1
-		color: #073B71
+		color: #073B71 
+		line-height: 1
 	.main__text
 		p
 			display: block
 			margin: 25px
 			color: #0C2035
 			font-size: 14px
+			line-height: 1.4
 			
 .button
 	display: inline-block
@@ -113,6 +118,8 @@
 			a
 				color: #FDD92B
 				font-size: 14px 
+				&:hover
+					color: #3EB2C7 
 
 .btn
 	display: inline-block
